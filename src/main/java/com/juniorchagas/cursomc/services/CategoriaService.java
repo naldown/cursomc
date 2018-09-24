@@ -7,10 +7,6 @@ import com.juniorchagas.cursomc.domain.Categoria;
 import com.juniorchagas.cursomc.repositories.CategoriaRepository;
 import com.juniorchagas.cursomc.services.exceptions.ObjectNotFoundException;
 
-
-
-
-
 @Service
 public class CategoriaService {
 
@@ -25,12 +21,13 @@ public class CategoriaService {
 					+",Tipo:"+Categoria.class.getName());  	
 			}
 			return obj;
-		
-		
-		
-		
+				
 	}
-	
+
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
 	
 	
 	
